@@ -7,13 +7,13 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
-# 10.times do
-# 	Doctor.create(first_name: Faker::DragonBall.character, last_name: Faker::Name.last_name, speciality: Faker::Job.field, postal_code: Faker::Address.postcode)
-# end
+10.times do
+	Doctor.create(first_name: Faker::DragonBall.character, last_name: Faker::Name.last_name, speciality: Faker::Job.field, postal_code: Faker::Address.postcode)
+end
 
-# 10.times do
-# 	Patient.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
-# end
+10.times do
+	Patient.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
+end
 
 10.times do
 	Appointment.create(date: Faker::Time.between(DateTime.now - 1, DateTime.now), doctor_id: Doctor.first(10).pluck(:id).sample, patient_id: Patient.first(10).pluck(:id).sample)
